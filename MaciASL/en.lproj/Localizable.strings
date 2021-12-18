@@ -1,0 +1,17 @@
+/* New from ACPI */
+"new-from-acpi" = "New from ACPI";
+
+/* Export Tableset */
+"export-tableset" = "Export Tableset";
+
+/* Presave */
+"presave" = "Presave";
+
+/* \u2023 */
+"triangular-bullet" = " ‣ ";
+
+/* Cancel */
+"cancel" = "Cancel";
+
+/* Open Selected */
+"open-selected" = "Open Selected";

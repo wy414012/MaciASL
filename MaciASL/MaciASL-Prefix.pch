@@ -1,0 +1,63 @@
+//
+// Prefix header for all source files of the 'MaciASL' target in the 'MaciASL' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
+
+#define kMaciASLDomain @"MaciASLDomain"
+#define kUTTypeAML @"org.acpica.aml"
+#define kUTTypeDSL @"org.acpica.dsl"
+#define kUTTypeNavObject @"org.acidanthera.maciasl.navobject"
+#define kUTTypeTableset @"org.acidanthera.maciasl.tableset"
+#define kUTTypeIOJones @"org.acidanthera.iojones"
+#define lineForRange(x,y) [x substringWithRange:[x lineRangeForRange:y]]
+#define assignWithNotice(x,y,z) {[x willChangeValueForKey:@""#y];_##y=z;[x didChangeValueForKey:@""#y];}
+#define muteWithNotice(x,y,z) {[x willChangeValueForKey:@""#y];z;[x didChangeValueForKey:@""#y];}
+#define insertWithNotice(x,y,z) {[x willChange:NSKeyValueChangeInsertion valuesAtIndexes:[NSIndexSet indexSetWithIndex:_##y.count] forKey:@""#y];[_##y addObject:z];[x didChange:NSKeyValueChangeInsertion valuesAtIndexes:[NSIndexSet indexSetWithIndex:_##y.count-1] forKey:@""#y];}
+
+typedef NS_ENUM(NSUInteger, MaciASLError) {
+    kCompilerError = 1,
+    kFileError,
+    kACPIError,
+    kNavigatorError,
+    kDecompileError,
+    kAScriptFileError,
+    kURLStandardError,
+    kNULLSSDTError,
+    kFreqRangeError,
+    kNSComparisonPredicateError,
+    kLockError,
+    kStoreError,
+    kTablesetError,
+    kiASLBuildError,
+    kiASLCheckError,
+    kPackageError
+};
+
+NS_INLINE NSError* ModalError(NSError *error){
+    if (error != nil) {
+        if ([NSThread isMainThread]) {
+            [[NSAlert alertWithError:error] performSelectorOnMainThread:@selector(runModal) withObject:nil waitUntilDone:true];
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[NSAlert alertWithError:error] performSelectorOnMainThread:@selector(runModal) withObject:nil waitUntilDone:true];
+            });
+        }
+    }
+    return error;
+}
+NS_INLINE void SplitView(NSSplitView *splitView){
+    NSUInteger i = 0;
+    for (NSString *frame in [NSUserDefaults.standardUserDefaults stringArrayForKey:[@"NSSplitView Subview Frames " stringByAppendingString:splitView.autosaveName]])
+         [[splitView.subviews objectAtIndex:i++] setFrame:NSRectFromString(frame)];
+    splitView.needsLayout = true;
+}
+NS_INLINE BOOL LoadNib(NSString *nib, id owner) {
+#if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_7
+    return [NSBundle.mainBundle loadNibNamed:nib owner:owner topLevelObjects:nil];
+#else
+    return [NSBundle loadNibNamed:nib owner:owner];
+#endif
+}

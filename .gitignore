@@ -1,0 +1,9 @@
+.DS_Store
+DerivedData
+project.xcworkspace
+xcuserdata
+clang-analyze
+build
+Dist/acpica
+Dist/iasl-*.*
+bin/
