@@ -38,7 +38,7 @@ jobs:
       - name: 打包上传构建工件
         uses: actions/upload-artifact@v2
         with:
-          name: OpenCore_Linux_build
+          name: ASL_IDE_build
           path: build/*.zip
 
       - name: 上传发布版本
