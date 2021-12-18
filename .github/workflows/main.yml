@@ -27,12 +27,12 @@ jobs:
 
       - name: CI Bootstrap
         run: |
-          src=$(/usr/bin/curl -Lfs https://raw.githubusercontent.com/acidanthera/ocbuild/master/ci-bootstrap.sh) && eval "$src" || exit 1
-          /usr/bin/curl -OL "https://github.com/acidanthera/ocbuild/raw/master/codesign/appsign.sh" || exit 1
+          src=$(/usr/bin/curl -Lfs https://raw.githubusercontent.com/wy414012/ocbuild/Yaming/ci-bootstrap.sh) && eval "$src" || exit 1
+          /usr/bin/curl -OL "https://github.com/wy414012/ocbuild/raw/Yaming/codesign/appsign.sh" || exit 1
           chmod a+x appsign.sh || exit 1
 
       - name: Compile with codesign (DEBUG)
-        if: github.repository_owner == 'acidanthera' && github.event_name != 'pull_request'
+        if: github.repository_owner == 'wy414012' && github.event_name != 'pull_request'
         env:
           MAC_CERTIFICATE_PASSWORD: ${{ secrets.MAC_CERTIFICATE_PASSWORD }}
           MAC_ACCOUNT_NAME: ${{ secrets.MAC_ACCOUNT_NAME }}
@@ -48,22 +48,22 @@ jobs:
         run: DEPLOY_SCRIPT="$(pwd)/appsign.sh" xcodebuild -jobs 1 -configuration Release
 
       - name: Compile (DEBUG)
-        if: github.repository_owner != 'acidanthera' || github.event_name == 'pull_request'
+        if: github.repository_owner != 'wy414012' || github.event_name == 'pull_request'
         run: xcodebuild -jobs 1 -configuration Debug
 
       - name: Compile (RELEASE)
-        if: github.repository_owner != 'acidanthera' || github.event_name == 'pull_request'
+        if: github.repository_owner != 'wy414012' || github.event_name == 'pull_request'
         run: xcodebuild -jobs 1 -configuration Release
 
       - name: Upload to Artifacts
-        if: github.repository_owner == 'acidanthera' && github.event_name != 'pull_request'
+        if: github.repository_owner == 'wy414012' && github.event_name != 'pull_request'
         uses: actions/upload-artifact@v2
         with:
           name: Artifacts
           path: build/*/*.dmg
 
       - name: Upload to Release
-        if: github.event_name == 'release' && github.repository_owner == 'acidanthera'
+        if: github.event_name == 'release' && github.repository_owner == 'wy414012'
         uses: svenstaro/upload-release-action@e74ff71f7d8a4c4745b560a485cc5fdb9b5b999d
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -72,13 +72,13 @@ jobs:
           file_glob: true
 
       - name: Get Sparkle 1.26
-        if: github.event_name == 'release' && github.repository_owner == 'acidanthera'
+        if: github.event_name == 'release' && github.repository_owner == 'wy414012'
         run: |
           curl -L -s "https://github.com/sparkle-project/Sparkle/releases/download/1.26.0/Sparkle-1.26.0.tar.xz" -o Sparkle.tar.xz || exit 1
           tar -xf Sparkle.tar.xz || exit 1
 
       - name: Get Information & Sign
-        if: github.event_name == 'release' && github.repository_owner == 'acidanthera'
+        if: github.event_name == 'release' && github.repository_owner == 'wy414012'
         run: |
            TAG_VER=${GITHUB_REF/refs\/tags\//}
            DATE=$(date -R)
@@ -96,37 +96,3 @@ jobs:
           git commit appcast.xml -m "Update Appcast"
           git push --set-upstream origin appcast --force
 
-  analyze-clang:
-    name: Analyze Clang
-    runs-on: macos-latest
-    env:
-      JOB_TYPE: ANALYZE
-    steps:
-      - uses: actions/checkout@v2
-      - name: CI Bootstrap
-        run: |
-          src=$(/usr/bin/curl -Lfs https://raw.githubusercontent.com/acidanthera/ocbuild/master/ci-bootstrap.sh) && eval "$src" || exit 1
-
-      - run: xcodebuild analyze -quiet -scheme MaciASL -configuration Debug CLANG_ANALYZER_OUTPUT=plist-html CLANG_ANALYZER_OUTPUT_DIR="$(pwd)/clang-analyze" && [ "$(find clang-analyze -name "*.html")" = "" ]
-      - run: xcodebuild clean -quiet -scheme MaciASL
-      - run: xcodebuild analyze -quiet -scheme MaciASL -configuration Release CLANG_ANALYZER_OUTPUT=plist-html CLANG_ANALYZER_OUTPUT_DIR="$(pwd)/clang-analyze" && [ "$(find clang-analyze -name "*.html")" = "" ]
-
-  analyze-coverity:
-    name: Analyze Coverity
-    runs-on: macos-latest
-    env:
-      JOB_TYPE: COVERITY
-    if: github.repository_owner == 'acidanthera' && github.event_name != 'pull_request'
-    steps:
-      - uses: actions/checkout@v2
-      - name: CI Bootstrap
-        run: |
-          src=$(/usr/bin/curl -Lfs https://raw.githubusercontent.com/acidanthera/ocbuild/master/ci-bootstrap.sh) && eval "$src" || exit 1
-
-      - name: Run Coverity
-        run: |
-          src=$(/usr/bin/curl -Lfs https://raw.githubusercontent.com/acidanthera/ocbuild/master/coverity/covstrap.sh) && eval "$src" || exit 1
-        env:
-          COVERITY_SCAN_TOKEN: ${{ secrets.COVERITY_SCAN_TOKEN }}
-          COVERITY_SCAN_EMAIL: ${{ secrets.COVERITY_SCAN_EMAIL }}
-          COVERITY_BUILD_COMMAND: xcodebuild -configuration Release
