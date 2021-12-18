@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,31 +18,30 @@
         <window title="生成 SSDT" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="ssdtFrame" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <rect key="contentRect" x="196" y="207" width="577" height="401"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-            <view key="contentView" id="2">
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+            <view key="contentView" misplaced="YES" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="577" height="401"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <splitView autosaveName="ssdtMainFrame" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="93">
-                        <rect key="frame" x="0.0" y="0.0" width="577" height="401"/>
+                        <rect key="frame" x="0.0" y="0.0" width="577" height="407"/>
                         <subviews>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="20" horizontalPageScroll="10" verticalLineScroll="20" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="782">
-                                <rect key="frame" x="0.0" y="0.0" width="181" height="401"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <rect key="frame" x="0.0" y="0.0" width="181" height="407"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <clipView key="contentView" drawsBackground="NO" id="A9j-u9-Tqw">
-                                    <rect key="frame" x="1" y="1" width="179" height="399"/>
+                                    <rect key="frame" x="1" y="1" width="179" height="405"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="20" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="786" id="783">
-                                            <rect key="frame" x="0.0" y="0.0" width="179" height="399"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="179" height="405"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="0.0"/>
                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn identifier="AutomaticTableColumnIdentifier.0" width="176" minWidth="16" maxWidth="1000" id="786">
+                                                <tableColumn identifier="AutomaticTableColumnIdentifier.0" width="147" minWidth="16" maxWidth="1000" id="786">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
-                                                        <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
                                                     </tableHeaderCell>
@@ -54,11 +53,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="853">
-                                                            <rect key="frame" x="1" y="0.0" width="176" height="20"/>
+                                                            <rect key="frame" x="11" y="0.0" width="156" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView translatesAutoresizingMaskIntoConstraints="NO" id="860">
-                                                                    <rect key="frame" x="2" y="2" width="16" height="16"/>
+                                                                    <rect key="frame" x="2" y="-1" width="16" height="22"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="16" id="861"/>
                                                                         <constraint firstAttribute="height" constant="16" id="862"/>
@@ -74,7 +73,7 @@
                                                                     </connections>
                                                                 </imageView>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="859">
-                                                                    <rect key="frame" x="26" y="3" width="149" height="17"/>
+                                                                    <rect key="frame" x="26" y="3" width="129" height="16"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="864">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -120,15 +119,15 @@
                                 </scroller>
                             </scrollView>
                             <splitView fixedFrame="YES" autosaveName="ssdtSubFrame" dividerStyle="thin" id="102">
-                                <rect key="frame" x="182" y="0.0" width="395" height="401"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <rect key="frame" x="182" y="0.0" width="395" height="407"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <customView id="103">
-                                        <rect key="frame" x="0.0" y="0.0" width="395" height="186"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="395" height="189"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="131">
-                                                <rect key="frame" x="210" y="146" width="144" height="22"/>
+                                                <rect key="frame" x="210" y="149" width="144" height="22"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="" drawsBackground="YES" id="163">
                                                     <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="165">
                                                         <integer key="minimum" value="5"/>
@@ -149,7 +148,7 @@
                                                 </connections>
                                             </textField>
                                             <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="135">
-                                                <rect key="frame" x="359" y="143" width="19" height="27"/>
+                                                <rect key="frame" x="359" y="143" width="19" height="28"/>
                                                 <stepperCell key="cell" continuous="YES" alignment="left" minValue="5" maxValue="150" doubleValue="65" id="158"/>
                                                 <connections>
                                                     <binding destination="-2" name="value" keyPath="tdp" id="364">
@@ -161,7 +160,7 @@
                                                 </connections>
                                             </stepper>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="137">
-                                                <rect key="frame" x="18" y="149" width="70" height="17"/>
+                                                <rect key="frame" x="18" y="149" width="70" height="16"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="TDP (瓦特)" id="156">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -169,7 +168,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="413">
-                                                <rect key="frame" x="210" y="114" width="144" height="22"/>
+                                                <rect key="frame" x="210" y="117" width="144" height="22"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="" drawsBackground="YES" id="438">
                                                     <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="439">
                                                         <integer key="minimum" value="1000"/>
@@ -190,7 +189,7 @@
                                                 </connections>
                                             </textField>
                                             <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="416">
-                                                <rect key="frame" x="359" y="111" width="19" height="27"/>
+                                                <rect key="frame" x="359" y="112" width="19" height="28"/>
                                                 <stepperCell key="cell" continuous="YES" alignment="left" increment="100" minValue="1000" maxValue="5000" doubleValue="2900" id="435"/>
                                                 <connections>
                                                     <binding destination="-2" name="value" keyPath="mtf" id="447">
@@ -202,15 +201,15 @@
                                                 </connections>
                                             </stepper>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="417">
-                                                <rect key="frame" x="18" y="118" width="124" height="17"/>
+                                                <rect key="frame" x="18" y="118" width="124" height="16"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="最大睿频频率 (兆赫)" id="434">
-                                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                                    <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
                                             <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="505">
-                                                <rect key="frame" x="359" y="79" width="19" height="27"/>
+                                                <rect key="frame" x="359" y="81" width="19" height="28"/>
                                                 <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="32" doubleValue="1" id="520"/>
                                                 <connections>
                                                     <binding destination="-2" name="value" keyPath="logicalcpus" id="524">
@@ -221,7 +220,7 @@
                                                 </connections>
                                             </stepper>
                                             <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="506">
-                                                <rect key="frame" x="210" y="82" width="144" height="22"/>
+                                                <rect key="frame" x="210" y="85" width="144" height="22"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="" drawsBackground="YES" id="518">
                                                     <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="519">
                                                         <integer key="minimum" value="1"/>
@@ -241,15 +240,15 @@
                                                 </connections>
                                             </textField>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="507">
-                                                <rect key="frame" x="18" y="86" width="150" height="17"/>
+                                                <rect key="frame" x="18" y="87" width="149" height="16"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="逻辑处理器数量 (大于 0)" id="517">
-                                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                                    <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="568">
-                                                <rect key="frame" x="18" y="53" width="101" height="17"/>
+                                                <rect key="frame" x="18" y="56" width="101" height="16"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="CPU 频率 (兆赫)" id="576">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -257,7 +256,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="569">
-                                                <rect key="frame" x="210" y="50" width="144" height="22"/>
+                                                <rect key="frame" x="210" y="53" width="144" height="22"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="" drawsBackground="YES" id="574">
                                                     <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="575">
                                                         <integer key="minimum" value="1000"/>
@@ -277,7 +276,7 @@
                                                 </connections>
                                             </textField>
                                             <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="570">
-                                                <rect key="frame" x="359" y="47" width="19" height="27"/>
+                                                <rect key="frame" x="359" y="50" width="19" height="28"/>
                                                 <stepperCell key="cell" continuous="YES" alignment="left" increment="100" minValue="2000" maxValue="5000" doubleValue="2000" id="573"/>
                                                 <connections>
                                                     <binding destination="-2" name="value" keyPath="cpufrequency" id="582">
@@ -288,10 +287,10 @@
                                                 </connections>
                                             </stepper>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="613">
-                                                <rect key="frame" x="314" y="14" width="67" height="32"/>
+                                                <rect key="frame" x="320" y="18" width="62" height="32"/>
                                                 <buttonCell key="cell" type="push" title="确定" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="618">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                                    <font key="font" metaFont="system"/>
                                                     <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
@@ -301,10 +300,10 @@ DQ
                                                 </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="614">
-                                                <rect key="frame" x="14" y="14" width="67" height="32"/>
+                                                <rect key="frame" x="13" y="18" width="62" height="32"/>
                                                 <buttonCell key="cell" type="push" title="取消" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="617">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                                    <font key="font" metaFont="system"/>
                                                     <string key="keyEquivalent" base64-UTF8="YES">
 Gw
 </string>
@@ -314,10 +313,10 @@ Gw
                                                 </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="615">
-                                                <rect key="frame" x="164" y="14" width="67" height="32"/>
+                                                <rect key="frame" x="167" y="18" width="62" height="32"/>
                                                 <buttonCell key="cell" type="push" title="重置" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="616">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                                    <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                                 <connections>
                                                     <action selector="resetGenerator:" target="-2" id="kjS-i0-7OB"/>
@@ -362,18 +361,18 @@ Gw
                                         </constraints>
                                     </customView>
                                     <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="710">
-                                        <rect key="frame" x="0.0" y="187" width="395" height="214"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                        <rect key="frame" x="0.0" y="190" width="395" height="217"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <clipView key="contentView" drawsBackground="NO" id="uwd-4a-e41">
-                                            <rect key="frame" x="1" y="1" width="378" height="212"/>
+                                            <rect key="frame" x="1" y="1" width="378" height="215"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" incrementalSearchingEnabled="YES" allowsUndo="YES" spellingCorrection="YES" id="711">
-                                                    <rect key="frame" x="0.0" y="0.0" width="378" height="212"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="378" height="215"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    <size key="minSize" width="378" height="212"/>
+                                                    <size key="minSize" width="378" height="215"/>
                                                     <size key="maxSize" width="463" height="10000000"/>
                                                     <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <connections>
@@ -394,7 +393,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="713">
-                                            <rect key="frame" x="379" y="1" width="15" height="212"/>
+                                            <rect key="frame" x="379" y="1" width="15" height="215"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>
@@ -424,6 +423,7 @@ Gw
             <point key="canvasLocation" x="139.5" y="147.5"/>
         </window>
         <treeController objectClassName="SourceProvider" editable="NO" childrenKeyPath="children.SSDT" avoidsEmptySelection="NO" preservesSelection="NO" selectsInsertedObjects="NO" id="640" userLabel="Sources">
+            <classReference key="objectClass" className="SourceProvider"/>
             <connections>
                 <binding destination="343" name="contentArray" keyPath="providers" id="642"/>
             </connections>
@@ -432,6 +432,6 @@ Gw
         <customObject id="343" userLabel="Source List" customClass="SourceList"/>
     </objects>
     <resources>
-        <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="NSActionTemplate" width="15" height="15"/>
     </resources>
 </document>
