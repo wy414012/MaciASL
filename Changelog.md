@@ -1,5 +1,8 @@
 MaciASL Changelog
 =================
+### v1.6.3
+- 更新iasl版本
+
 #### v1.6.2
 - Implement automatic updates with Sparkle, thanks to @SkyrilHD
 
